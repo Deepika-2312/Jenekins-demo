@@ -20,7 +20,7 @@ pipeline {
 
         stage('Package') {
             steps {
-                bat 'mkdir output'
+                bat 'if not exist output mkdir output'
                 bat 'echo Build file > output\\app.txt'
                 archiveArtifacts artifacts: 'output/*'
             }
